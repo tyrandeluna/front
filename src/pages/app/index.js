@@ -21,7 +21,7 @@ export default class App extends Component {
   loadReservations = async () => {
     let response
 
-    if (getUserRole() === '5') {
+    if (getUserRole() === '41') {
       response = await api.get(`reservations`)
     } else {
       let user_id = getUserId()
@@ -36,7 +36,7 @@ export default class App extends Component {
   loadSolicitations = async () => {
     let response
 
-    if (getUserRole() === '5') {
+    if (getUserRole() === '41') {
       response = await api.get(`solicitations?approved=false`)
     } else {
       let user_id = getUserId()
@@ -115,7 +115,7 @@ export default class App extends Component {
             </div>
             : this.state.solicitations.map(solicitation => (
                 <div className="col-md-3 col-xs-12 col-sm-6" key={solicitation.id}>
-                  { getUserRole() === '5' ?
+                  { getUserRole() === '41' ?
                     <Card
                       link=""
                       cancel={() => this.cancelSolicitation(solicitation.id)}
@@ -196,7 +196,7 @@ export default class App extends Component {
           <div className="row">
             { this.state.rooms.map(room => (
                 <>
-                { getUserRole() === '5' ?
+                { getUserRole() === '41' ?
                 <div className="col-md-3 col-xs-12 col-sm-6" key={room.id}>
                     <Card allocate={true}
                     allocateLink={`http://${window.location.host}/allocation/${room.id}`}

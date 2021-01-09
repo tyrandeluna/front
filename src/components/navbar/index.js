@@ -39,7 +39,7 @@ export default function navbar (props) {
                 <li className="nav-item">
                   <a className="nav-link" href="/app">Dashboard</a>
                 </li>
-                { getUserRole() === '5' ?
+                { getUserRole() === '41' ?
                 <>
                 <li className="nav-item">
                   <a className="nav-link" href="/saveRoom">Nova Sala</a>

@@ -45,7 +45,7 @@ export default class Reservation extends Component {
   }
 
   componentDidMount () {
-    if (getUserRole() === '5') this.loadUsers()
+    if (getUserRole() === '41') this.loadUsers()
 
     this.loadRoom()
     this.loadUser()
@@ -65,9 +65,9 @@ export default class Reservation extends Component {
 
         let response
 
-        if (getUserRole() === '5' && this.props.match.params.allocateId) {
+        if (getUserRole() === '41' && this.props.match.params.allocateId) {
           response = await api.post('reservations', { user_id: user, room_id, discipline, day, teacher, allocation_hour })
-        } else if (getUserRole() === '5') {
+        } else if (getUserRole() === '41') {
           response = await api.post('reservations', { user_id: user, room_id, start_at, end_at, discipline })
         } else {
           response = await api.post('solicitations', { user_id, room_id, start_at, end_at, discipline })
@@ -81,8 +81,8 @@ export default class Reservation extends Component {
   }
 
   render() {
-    let navbarBreadCrumb = getUserRole() === '5' ? 'Reserva' : 'Solicitar Reserva'
-    let buttonName = getUserRole() === '5' ? 'Reservar' : 'Solicitar'
+    let navbarBreadCrumb = getUserRole() === '41' ? 'Reserva' : 'Solicitar Reserva'
+    let buttonName = getUserRole() === '41' ? 'Reservar' : 'Solicitar'
 
     if (this.props.match.params.allocateId) {
       navbarBreadCrumb = 'Alocação'
@@ -102,7 +102,7 @@ export default class Reservation extends Component {
                 <div className="row justify-content-center">
                     <div className="col-md-6 col-xs-12">
                       <form onSubmit={this.handleSubmit}>
-                        { getUserRole() === '5' ?
+                        { getUserRole() === '41' ?
                         <>
                         <div className="form-group">
                           <label htmlFor="InputTeacher">Nome do(a) professor(a) <small>Preencha este campo caso o professor não possua cadastro.</small></label>
