@@ -60,7 +60,7 @@ export default class SaveRoom extends Component {
                                             <label htmlFor="InputRole">Tipo de usuário</label>
                                             <select className="form-control" id="InputRole" onChange={e => this.setState({ role_id: e.target.value })}>
                                               <option value={1}>Aluno</option>
-                                              <option value={2}>Professor</option>
+                                              <option value={11}>Professor</option>
                                             </select>
                                         </div>
 
