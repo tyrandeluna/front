@@ -113,7 +113,7 @@ export default class Reservation extends Component {
                             <select className="form-control" id="InputUserId" value={this.state.user} onChange={e => this.setState({ user: e.target.value })}>
                               {
                                 this.state.users.map(user => (
-                                  <option value={user.id} key={user.id}>{user.username}</option>
+                                  <option value={user.role_id} key={user.id}>{user.username}</option>
                                 ))
                               }
                             </select>
