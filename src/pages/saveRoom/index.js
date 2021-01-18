@@ -93,7 +93,7 @@ export default class SaveRoom extends Component {
                                             <select className="form-control" id="InputBlockId" value={this.state.block_id} onChange={e => this.setState({ block_id: e.target.value })}>
                                                 {
                                                     this.state.blocks.map(block => (
-                                                        <option value={block.number} key={block.id}>{block.number}</option>
+                                                        <option value={block.id} key={block.id}>{block.number}</option>
                                                     ))
                                                 }
                                             </select>
