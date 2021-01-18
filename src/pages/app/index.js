@@ -15,6 +15,7 @@ export default class App extends Component {
   loadRooms = async () => {
     const response = await api.get('rooms')
 
+    console.log(response)
     this.setState({ rooms: response.data.data })
   }
 
