@@ -40,6 +40,7 @@ export default class SaveRoom extends Component {
 
             if (response.status === 201) this.props.history.push('/app')
           } catch (err) {
+              console.log(err)
             this.setState({ error: err.response.data[0].message })
           }
         }

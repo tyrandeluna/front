@@ -39,7 +39,7 @@ export default class Reservation extends Component {
   }
 
   loadUsers = async () => {
-    const response = await api.get('users?role_id=2')
+    const response = await api.get('users?role_id=11')
     console.log(response.data)
     this.setState({ users: response.data })
   }
